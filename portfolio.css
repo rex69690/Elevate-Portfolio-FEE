@@ -1,3 +1,4 @@
+/* Global Styles */
 
 a {
   text-decoration: none;
@@ -15,6 +16,9 @@ header {
   max-width: 1440px;
   margin: auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -100%; /* Initial position: off-screen */
+  animation: dropDown 1s ease-in-out; /* Animation to drop down */
 
   .logo-holder {
     display: flex;
@@ -34,7 +38,7 @@ header {
       width: 64px;
       margin-right: 20px;
       border-radius: 50%;
-	  text-shadow: #FC0 1px 0 10px;
+      text-shadow: #FC0 1px 0 10px;
     }
     .logo-text {
       flex: 1;
@@ -45,6 +49,8 @@ header {
   nav {
     display: flex;
     align-items: center;
+    position: relative; /* add this */
+
     ul {
       display: flex;
       list-style-type: none;
@@ -64,11 +70,11 @@ header {
       }
     }
     .mobile-toggle {
-      display: none;
+      display: none; /* hide the toggle button by default */
       color: var(--base-800);
       padding: 10px;
       @media (max-width: 768px) {
-        display: inline-block;
+        display: inline-block; /* show the toggle button on iPhone dimensions */
         position: absolute;
         top: 20px;
         right: 20px;
@@ -88,7 +94,7 @@ header {
       margin-top: 10px;
       width: 100%;
       ul {
-        display: none;
+        display: none; /* hide the menu by default */
         flex-direction: column;
         text-align: center;
         width: 100%;
@@ -96,13 +102,12 @@ header {
           width: 100%;
         }
         &.active {
-          display: flex;
+          display: flex; /* show the menu when the toggle button is clicked */
         }
       }
     }
   }
 }
-
 
 section {
   max-width: 1440px;
@@ -700,3 +705,4 @@ header {
     top: 0; /* End at the original position */
   }
 }
+

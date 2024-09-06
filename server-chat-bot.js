@@ -3,7 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
-const path = 'C:\\Users\\tusha\\Desktop\\PROJECTS\\PORTFOLIO WEBSITE\\imgs\\pdf-template.pdf';
+// const path = 'C:\\Users\\tusha\\Desktop\\PROJECTS\\PORTFOLIO WEBSITE\\imgs\\pdf-template.pdf';
 
 const app = express();
 app.use(cors());
@@ -11,8 +11,9 @@ app.use(express.json());
 
 const PORT = 3000;
 
+const work = "I am open to work you can , that i am compatible with you can check skill section for more info!";
 // Load resume data from a local file (you could fetch this dynamically if needed)
-const resumeData = fs.readFileSync(path, 'utf8');
+const resumeData =("Lakshay Full-Stack Developer   ------I’m Lakshay, a versatile developer skilled in both front-end and back-end technologies. With expertise in HTML, CSS, and JavaScript, I build dynamic and responsive websites and applications. My passion for coding drives me to deliver seamless user experiences and innovative solutions");
 
 // Endpoint to handle chat requests
 app.post('/chat', (req, res) => {
@@ -27,7 +28,9 @@ app.post('/chat', (req, res) => {
     } else if (userMessage.includes('projects')) {
         botResponse = 'I have completed projects such as a Weather App, Chatbot Application, and Tic-Tac-Toe game.';
     } else if (userMessage.includes('resume')) {
-        botResponse = `Here is a summary of my resume: ${resumeData}`;
+        botResponse = resumeData; // Return the contents of the resumeData variable
+    } else  if(userMessage.includes('work')) {
+        botResponse = work;
     }
 
     res.json({ response: botResponse });

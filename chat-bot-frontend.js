@@ -53,3 +53,10 @@ chatInput.addEventListener('keypress', (e) => {
         sendMessage();
     }
 });
+
+// my-details-card-function  
+
+
+function showImage() {
+    window.location.href = "card.html"; // replace with the actual HTML file name
+  }
