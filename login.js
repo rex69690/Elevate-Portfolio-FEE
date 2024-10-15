@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("container");
   const registerbtn = document.getElementById("register");
   const loginbtn = document.getElementById("login");
+  const signinForm = document.getElementById("signinForm");
+  const signupForm = document.getElementById("signupForm");
 
   if (registerbtn && loginbtn) {
     registerbtn.addEventListener("click", () => {
@@ -13,21 +15,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const signinForm = document.getElementById("signinForm");
-  if (signinForm) {
-    signinForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+  signinForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-      if (email === "tusharkoundal913@gmail.com" && password === "123456") {
-        handleLogin();
-      } else {
-        alert("Invalid email or password.");
-      }
-    });
-  }
+    // Check for stored user credentials
+    const storedUser  = JSON.parse(localStorage.getItem("user"));
+
+    if (storedUser  && storedUser .email === email && storedUser .password === password) {
+      handleLogin();
+    } else {
+      alert("Invalid email or password.");
+    }
+  });
+
+  signupForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const signupEmail = document.getElementById("signupEmail").value;
+    const signupPassword = document.getElementById("signupPassword").value;
+
+    // Save user credentials to local storage
+    const user = {
+      email: signupEmail,
+      password: signupPassword
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    alert("Registration successful! You can now log in.");
+    container.classList.remove("active"); // Optionally switch to login view
+  });
 
   function handleLogin() {
     setTimeout(function () {
