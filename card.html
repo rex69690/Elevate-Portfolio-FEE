@@ -19,16 +19,16 @@
                     </div>
                 </div>
             </div>
-            <div class="name">
+            <div id="card-name" class="name">
                 LAKSHAY 
             </div>
             <div class="details">
                 <div class="details-left">
                     <ul>
-                        <li>Age: 20</li>
-                        <li>Email: lakshay@gmail.com</li>
+                        <li id="card-age">Age: 20</li>
+                        <li id="card-email">Email: lakshay@gmail.com</li>
                         <li>Address: Chitkara University</li>
-                        <li>Phone: +123-456-789</li>
+                        <li id="card-contact">Phone: +123-456-789</li>
                         <li>Role: Software Developer</li>
                         <li>Experience: Fresher</li>
                     </ul>
@@ -39,5 +39,20 @@
             </div>
         </div>
     </div>
+    <script >
+        const storedChanges = localStorage.getItem('userDetails');
+
+if (storedChanges) {
+    const changes = JSON.parse(storedChanges);
+
+    
+    // document.getElementById('name-user').textContent = changes.username;
+    // document.getElementById('bio-user').textContent = changes.username;
+    document.getElementById('card-email').textContent = `Email: ${changes.email}`
+    document.getElementById('card-name').textContent = changes.username;
+    document.getElementById('card-contact').textContent = `Phone: ${changes.contact}`
+    
+}
+    </script>
 </body>
 </html>
