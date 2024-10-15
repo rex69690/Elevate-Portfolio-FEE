@@ -26,7 +26,8 @@ app.post('/chat', (req, res) => {
     } else if (userMessage.includes('experience')) {
         botResponse = 'I am currently a Computer Science student at Chitkara University with experience in front-end development.';
     } else if (userMessage.includes('projects')) {
-        botResponse = 'I have completed projects such as a Weather App, Chatbot Application, and Tic-Tac-Toe game.';
+        botResponse = 'I have completed projects such as a Weather App, Chatbot Application, and Tic-Tac-Toe game, check out more  on my portfolio.';
+
     } else if (userMessage.includes('resume')) {
         botResponse = resumeData; // Return the contents of the resumeData variable
     } else  if(userMessage.includes('work')) {
