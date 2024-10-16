@@ -109,6 +109,30 @@ header {
   }
 }
 
+
+/* /dark mode work ------- */
+/* #theme-toggle{
+  border-radius: 20px;
+  background-color: #0a61ae;
+  border: none;
+  color: white;
+  font-family: poppins;
+  font-size: 10px;
+  padding: 8px;
+  text-align: center;
+
+}
+body.light {
+  background-color: white;
+  color: black;
+
+}
+
+body.dark{
+  background-color: black;
+  color: white;
+} */
+
 section {
   max-width: 1440px;
   margin: auto;
@@ -124,7 +148,7 @@ section {
 
 .button {
   display: inline-block;
-  padding: 10px 30px;
+  padding: 10px 10px;
   background-color: var(--blue);
   color: var(--base-100);
   border-radius: 10px;

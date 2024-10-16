@@ -19,3 +19,12 @@ if (storedChanges) {
     document.getElementById('bio-text').textContent  = `so ... ${ changes.bio_u}`;
     
 }
+
+//here is dark mode change work S
+
+// const themeToggle = document.getElementById('theme-toggle')[0]
+// themeToggle.addEventListener('click', () => {
+//     document.body.classList.toggle('dark')
+
+
+// });
