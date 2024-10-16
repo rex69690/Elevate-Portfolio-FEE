@@ -29,7 +29,7 @@
                         <li id="card-email">Email: lakshay@gmail.com</li>
                         <li>Address: Chitkara University</li>
                         <li id="card-contact">Phone: +123-456-789</li>
-                        <li>Role: Software Developer</li>
+                        <li id="card-role">Role: Software Developer</li>
                         <li>Experience: Fresher</li>
                     </ul>
                 </div>
@@ -51,6 +51,8 @@ if (storedChanges) {
     document.getElementById('card-email').textContent = `Email: ${changes.email}`
     document.getElementById('card-name').textContent = changes.username;
     document.getElementById('card-contact').textContent = `Phone: ${changes.contact}`
+    document.getElementById('card-age').textContent = `Age: ${changes.age}`
+    document.getElementById('card-role').textContent = `Role: ${changes.role}`
     
 }
     </script>
