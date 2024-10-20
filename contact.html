@@ -3,9 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="utils-main.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(#4f7ad1, #f9fae7);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .contact-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+        .contact-left {
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-left-title h2 {
+            margin-bottom: 10px;
+        }
+        .contact-inputs {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        button {
+            padding: 10px 15px;
+            background-color:#4f7ad1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff4c4c;
+        }
+        .contact-right img {
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+        }
+        .contact-inputs{
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+
+        @media (min-width: 768px) {
+        .contact-container {
+            flex-direction: row; /* Change to row layout on larger screens */
+        }
+        .contact-left {
+            margin-bottom: 0; /* Remove bottom margin for larger screens */
+        }
+        .contact-right {
+            max-width: 500px; /* Set a max width for the image */
+        }
+    }
+
+    @media (max-width: 480px) {
+        button {
+            width: 100%; /* Make button full width on small screens */
+        }
+    }
+
+    </style>
 </head>
 <body>
-    
+
+   <div class="contact-container">
+       <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" onsubmit="return validateForm()">
+           <div class="contact-left-title">
+               <h2>Contact Me!</h2>
+               <hr>
+           </div>
+           <input type="hidden" name="access_key" value="dfa88ed3-9b3b-4d57-853e-41acfb571dc4">
+           <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
+           <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
+           <textarea name="message" placeholder="Your message" class="contact-inputs" cols="30" rows="10" required></textarea>
+           <button type="submit">Submit <img src="./assets/arrow_icon.png" alt=""></button>
+       </form>
+       <div class="contact-right">
+           <img src="./assets/right_img.png" alt="Contact Image">
+       </div>
+   </div>
+
+   <footer>
+       <p>&copy; 2023 Your <span id="name-user">Name</span> . All rights reserved.</p>
+   </footer>
+
+   <script>
+       function validateForm() {
+           const name = document.querySelector('input[name="name"]').value;
+           const email = document.querySelector('input[name="email"]').value;
+           const message = document.querySelector('textarea[name="message"]').value;
+
+           if (!name || !email || !message) {
+               alert("Please fill in all fields.");
+               return false;
+           }
+           return true;
+       }
+   </script>
+
 </body>
 </html>
