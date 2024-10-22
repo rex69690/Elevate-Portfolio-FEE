@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     localStorage.setItem("user", JSON.stringify(user));
     alert("Registration successful! You can now log in.");
-    container.classList.remove("active"); // Optionally switch to login view
+    container.classList.remove("active");
   });
 
   function handleLogin() {
